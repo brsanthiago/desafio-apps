@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Infoglobo</string>
+    <string name="title_activity_notice">NoticeActivity</string>
+    <string name="action_settings">Abrir no Browser</string>
+</resources>

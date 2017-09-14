@@ -1,0 +1,75 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.1"
+    defaultConfig {
+        applicationId "infoglobo.com.br.infoglobo"
+        minSdkVersion 15
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    lintOptions {
+        abortOnError false
+    }
+    configurations.all {
+        resolutionStrategy {
+            force 'com.android.support:support-annotations:23.1.1'
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+    }
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:'  + rootProject.supportLibraryVersion
+    compile 'com.android.support:design:'  + rootProject.supportLibraryVersion
+
+    // RecyclerView
+    compile 'com.android.support:recyclerview-v7:' + rootProject.supportLibraryVersion
+
+    //Dagger 2
+    compile 'com.google.dagger:dagger:' + rootProject.daggerVersion
+    annotationProcessor 'com.google.dagger:dagger-compiler:' + rootProject.daggerVersion
+
+
+    //Room
+    compile 'android.arch.lifecycle:extensions:' + rootProject.archVersion
+    annotationProcessor 'android.arch.lifecycle:compiler:' + rootProject.archVersion
+
+    //Picasso (Library for download and cache images)
+    compile 'com.squareup.picasso:picasso:2.5.2'
+
+    // Retrofit & Gson
+    compile 'com.squareup.retrofit2:retrofit:' + rootProject.retrofitVersion
+    compile 'com.squareup.retrofit2:converter-gson:' + rootProject.retrofitVersion
+    compile 'com.squareup.okhttp3:okhttp:' + rootProject.okhttpVersion
+    compile 'com.squareup.okhttp3:logging-interceptor:' + rootProject.okhttpVersion
+    compile 'com.squareup.retrofit2:adapter-rxjava:' + rootProject.retrofitVersion
+
+    //RXJava / RXAndroid
+    compile 'io.reactivex.rxjava2:rxandroid:' + rootProject.rxAndroid
+    compile 'io.reactivex.rxjava2:rxjava:' + rootProject.rxJava
+
+    provided 'javax.annotation:jsr250-api:1.0'
+
+    testCompile 'junit:junit:4.12'
+}

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="capa"
+            type="infoglobo.com.br.infoglobo.domain.model.Images"/>
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_bar_height">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                tools:imageUrl="@{capa.url}"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{capa.legenda}"
+            android:layout_gravity="bottom|center"
+            android:layout_marginBottom="@dimen/dots_margin_bottom"
+            android:textColor="@color/white"
+            android:shadowColor="@color/light_black"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="1"
+            android:layout_margin="@dimen/margin_min"/>
+    </FrameLayout>
+</layout>

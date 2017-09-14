@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="activity_horizontal_margin">16sp</dimen>
+    <dimen name="activity_vertical_margin">16sp</dimen>
+    <dimen name="text_size_min">12sp</dimen>
+    <dimen name="text_size_normal">14sp</dimen>
+    <dimen name="text_size_avg">16sp</dimen>
+    <dimen name="text_size_big">20sp</dimen>
+    <dimen name="margin_min">4sp</dimen>
+    <dimen name="margin_small">8sp</dimen>
+    <dimen name="margin_avg">16sp</dimen>
+    <dimen name="margin_big">24sp</dimen>
+    <dimen name="image_min">90sp</dimen>
+    <dimen name="app_bar_height">220dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="dots_height">30dp</dimen>
+    <dimen name="dots_margin_bottom">40dp</dimen>
+</resources>
